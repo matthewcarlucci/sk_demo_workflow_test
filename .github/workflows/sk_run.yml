@@ -13,8 +13,13 @@ jobs:
       with:
         python-version: 3.8
     - name: Install dependencies
+      #run: |
+      #  $CONDA/bin/conda env update --file env.yml --name base
+      #  Trying manual installs
       run: |
-        $CONDA/bin/conda env update --file env.yml --name base
+         $CONDA/bin/conda install r-essentials
+         $CONDA/bin/conda install python=3.8 
+         pip install scikick
     - name: Run Scikick
       run: |
         sk run
