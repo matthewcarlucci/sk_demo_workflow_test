@@ -31,7 +31,9 @@ jobs:
           python-version: '3.8' # Version range or exact version of a Python version to use, using SemVer's version range syntax
       - run: pip install scikick
       # Run scikick
-      - run: sk run -v
+      - run: |
+          sk run -v
+          mv report/out_html/ public/
       # Try beta action for deploy by branch
       - name: Set branch name
         id: branch
