@@ -32,3 +32,12 @@ jobs:
       - run: pip install scikick
       # Run scikick
       - run: sk run -v
+      # Try beta action for deploy by branch
+      - name: Set branch name
+        id: branch
+        run: echo "::set-output name=BRANCH_NAME::${GITHUB_REF##*/}"
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3.7.0-6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_dir: ${( steps.branch.outputs.BRANCH_NAME }}
