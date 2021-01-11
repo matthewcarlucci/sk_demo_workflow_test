@@ -5,7 +5,7 @@ on: [push]
 name: Install and run
 
 jobs:
-  Install and sk run:
+  Install-and-sk-run:
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
