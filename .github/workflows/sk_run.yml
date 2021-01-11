@@ -20,6 +20,9 @@ jobs:
          $CONDA/bin/conda install r-essentials
          $CONDA/bin/conda install python=3.8 
          pip install scikick
+    - name: Install more dependencies
+      run: |
+         $CONDA/bin/conda install r-rmarkdown
     - name: Run Scikick
       run: |
         sk run
